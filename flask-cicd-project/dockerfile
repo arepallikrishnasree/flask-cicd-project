@@ -1,0 +1,18 @@
+# Base image ni select cheyyandi
+FROM python:3.11-slim
+
+# Working directory set cheyyandi
+WORKDIR /app
+
+# Requirements install cheyyandi
+COPY requirements.txt .
+RUN pip install --no-cache-dir -r requirements.txt
+
+# App code copy cheyyandi
+COPY . .
+
+# Flask app 5000 port lo run avuthundhi ani declare cheyyandi
+EXPOSE 5000
+
+# App ni run cheyyadaniki command
+CMD ["python", "app.py"]
